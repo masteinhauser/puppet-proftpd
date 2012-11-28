@@ -1,14 +1,18 @@
+# WARNING: This file is managed by Puppet!!!
 #
 # /etc/proftpd/proftpd.conf -- This is a basic ProFTPD configuration file.
 # To really apply changes reload proftpd after modifications.
 # 
+
+DefaultAddress			<%= @ipaddress %> # <%= @fqdn %> 
+PidFile				<%= pid_file %>
 
 # Set off to disable IPv6 support which is annoying on IPv4 only boxes.
 UseIPv6				<%= use_ipv6 %>
 # If set on you can experience a longer connection delay in many cases.
 IdentLookups			off
 
-ServerName			"<%= name %>"
+ServerName			"<%= server_name %>"
 ServerIdent			on "<%= ident %>"
 ServerAdmin			<%= admin %>
 ServerType			standalone
